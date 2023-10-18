@@ -1,6 +1,8 @@
-.sliderItem {
-    max-width: 400px !important;
-    height: auto;
+.slider {
+    .sliderItem {
+        max-width: 400px;
+        height: auto;
+    }
 }
 .nameFilm {
     margin-top: 20px;
