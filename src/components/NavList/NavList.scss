@@ -1,0 +1,17 @@
+.listNavWrap {
+    display: flex;
+    column-gap: 10px;
+
+    li {
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            color: #777471;
+        }  
+    }
+}
+
+.activeNav {
+    color: #a44747;
+}

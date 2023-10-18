@@ -1,0 +1,40 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        .slider-btn {
+            width: 30px;
+        }
+    }
+}
+
+.slider-btn {
+    position: absolute;
+    color: rgb(252, 252, 252);
+    cursor: pointer;
+    bottom: 0;
+    height: 100%;
+    background-color: rgb(99, 94, 94, 0.5);
+    width: 20px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.slider-prev {
+    transform: rotate(180deg);
+}
+
+.slider-next {
+    right: 0;
+}
+
+.sliderWrap {
+    display: flex;
+    transition: all 0.3s;
+    column-gap: 20px;
+}
