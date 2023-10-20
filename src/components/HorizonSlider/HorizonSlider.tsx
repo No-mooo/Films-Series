@@ -1,12 +1,5 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import "./HorizonSlider.scss";
-// function getNumber(item) {
-//     let resul = Number(item.replace(/[^0-9]/g,""));
-//     if (item[0] == '-') resul *= -1;
-
-//     return resul;
-// },
-
 
 export function HorizonSlider({ children }: {children: ReactElement}) {
     const sliderItem = useRef<HTMLDivElement>(null);
@@ -14,7 +7,7 @@ export function HorizonSlider({ children }: {children: ReactElement}) {
     const [sliderWrap, setSliderWrap] = useState(0);
 
     function fixResizeSlider() {
-        if (sliderItem.current !== null && sliderWrapItem.current !== null && sliderWrapItem.current.lastElementChild !== null) {
+        if (sliderItem.current !== null && sliderWrapItem.current?.lastElementChild) {
             const sliderWidth = sliderItem.current.offsetWidth;
             const sliderWrap =  sliderWrapItem.current.lastElementChild.getBoundingClientRect().left + sliderWrapItem.current.lastElementChild.getBoundingClientRect().width;
 
@@ -48,8 +41,8 @@ export function HorizonSlider({ children }: {children: ReactElement}) {
             window.removeEventListener('resize', () => fixResizeSlider());
         }
 
-    }, [])
-    
+    }, []);
+
     return (
         <div
             ref={ sliderItem }
